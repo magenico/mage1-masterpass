@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magenico DOO Module
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magenico DOO Module License
+ * that is bundled with this package in the file license.pdf.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magenico.com/license
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to support@magenico.com so we can send you a copy immediately.
+ *
+ * @category   Magenico
+ * @package    Magenico_MasterPass
+ * @copyright  Copyright (c) 2017 Magenico DOO
+ * @license    http://www.magenico.com/license
+ */
+-->
+
+<config>
+    <modules>
+        <Magenico_MasterPass>
+            <version>1.0.0</version>
+        </Magenico_MasterPass>
+    </modules>
+    <global>
+        <models>
+            <magenico_masterpass>
+                <class>Magenico_MasterPass_Model</class>
+            </magenico_masterpass>
+        </models>
+		
+        <helpers>
+            <magenico_masterpass>
+                <class>Magenico_MasterPass_Helper</class>
+            </magenico_masterpass>
+        </helpers>	
+    </global>
+    <frontend>
+        <events>
+            <controller_action_postdispatch_customer_account_loginPost>
+                <observers>
+                    <magenico_masterpass_observer>
+                        <type>singleton</type>
+                        <class>magenico_masterpass/observer</class>
+                        <method>postdispatchCustomerAccountLoginPost</method>
+                    </magenico_masterpass_observer>
+                </observers>
+            </controller_action_postdispatch_customer_account_loginPost>
+        </events>
+    </frontend>
+    <default>
+        <magenico_masterpass>
+            <general>
+                <active>0</active>
+                <debug_enabled>1</debug_enabled>
+            </general>
+        </magenico_masterpass>
+    </default>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <magenico_masterpass>
+                                            <title>General</title>
+                                        </magenico_masterpass>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
