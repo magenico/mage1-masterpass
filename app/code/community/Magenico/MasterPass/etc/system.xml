@@ -29,7 +29,7 @@
     </tabs>
     <sections>
         <magenico_masterpass translate="label">
-            <label>Magenico MasterPass</label>
+            <label>MasterPass</label>
             <tab>magenico</tab>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
