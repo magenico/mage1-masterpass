@@ -57,6 +57,7 @@
             <general>
                 <active>0</active>
                 <debug_enabled>1</debug_enabled>
+                <master_password backend_model="adminhtml/system_config_backend_encrypted" />
             </general>
         </magenico_masterpass>
     </default>
