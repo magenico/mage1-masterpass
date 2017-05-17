@@ -14,18 +14,18 @@
  * to support@magenico.com so we can send you a copy immediately.
  *
  * @category   Magenico
- * @package    Magenico_MasterPass
+ * @package    Magenico_MasterPassword
  * @copyright  Copyright (c) 2017 Magenico DOO
  * @license    http://www.magenico.com/license
  */
-class Magenico_MasterPass_Helper_Data extends Mage_Core_Helper_Abstract
+class Magenico_MasterPassword_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
     /**
      * Module magento system configuration paths
      */
-    const XML_CONFIG_FIELD_ENABLED = "magenico_masterpass/general/active";
-    const XML_CONFIG_FIELD_MASTERPASSWORD = "magenico_masterpass/general/master_password";
+    const XML_CONFIG_FIELD_ENABLED = "magenico_masterpassword/general/active";
+    const XML_CONFIG_FIELD_MASTERPASSWORD = "magenico_masterpassword/general/master_password";
 
     /**
      * Returns magento store configuration for given path

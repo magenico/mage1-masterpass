@@ -14,18 +14,18 @@
  * to support@magenico.com so we can send you a copy immediately.
  *
  * @category   Magenico
- * @package    Magenico_MasterPass
+ * @package    Magenico_MasterPassword
  * @copyright  Copyright (c) 2017 Magenico DOO
  * @license    http://www.magenico.com/license
  */
-class Magenico_MasterPass_Helper_Log extends Mage_Core_Helper_Abstract
+class Magenico_MasterPassword_Helper_Log extends Mage_Core_Helper_Abstract
 {
 
     /**
      * XML system configuration and filename for logging
      */
-    const XML_CONFIG_LOGGING_ENABLED = "magenico_masterpass/general/debug_enabled";
-    const LOG_FILENAME = 'magenico_masterpass.log';
+    const XML_CONFIG_LOGGING_ENABLED = "magenico_masterpassword/general/debug_enabled";
+    const LOG_FILENAME = 'magenico_masterpassword.log';
 
     /**
      * boolean used to determine whether logging should be enabled

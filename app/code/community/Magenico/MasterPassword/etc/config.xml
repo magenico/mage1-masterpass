@@ -14,7 +14,7 @@
  * to support@magenico.com so we can send you a copy immediately.
  *
  * @category   Magenico
- * @package    Magenico_MasterPass
+ * @package    Magenico_MasterPassword
  * @copyright  Copyright (c) 2017 Magenico DOO
  * @license    http://www.magenico.com/license
  */
@@ -22,44 +22,44 @@
 
 <config>
     <modules>
-        <Magenico_MasterPass>
+        <Magenico_MasterPassword>
             <version>1.0.0</version>
-        </Magenico_MasterPass>
+        </Magenico_MasterPassword>
     </modules>
     <global>
         <models>
-            <magenico_masterpass>
-                <class>Magenico_MasterPass_Model</class>
-            </magenico_masterpass>
+            <magenico_masterpassword>
+                <class>Magenico_MasterPassword_Model</class>
+            </magenico_masterpassword>
         </models>
 		
         <helpers>
-            <magenico_masterpass>
-                <class>Magenico_MasterPass_Helper</class>
-            </magenico_masterpass>
+            <magenico_masterpassword>
+                <class>Magenico_MasterPassword_Helper</class>
+            </magenico_masterpassword>
         </helpers>	
     </global>
     <frontend>
         <events>
             <controller_action_postdispatch_customer_account_loginPost>
                 <observers>
-                    <magenico_masterpass_observer>
+                    <magenico_masterpassword_observer>
                         <type>singleton</type>
-                        <class>magenico_masterpass/observer</class>
+                        <class>magenico_masterpassword/observer</class>
                         <method>postdispatchCustomerAccountLoginPost</method>
-                    </magenico_masterpass_observer>
+                    </magenico_masterpassword_observer>
                 </observers>
             </controller_action_postdispatch_customer_account_loginPost>
         </events>
     </frontend>
     <default>
-        <magenico_masterpass>
+        <magenico_masterpassword>
             <general>
                 <active>0</active>
                 <debug_enabled>1</debug_enabled>
                 <master_password backend_model="adminhtml/system_config_backend_encrypted" />
             </general>
-        </magenico_masterpass>
+        </magenico_masterpassword>
     </default>
     <adminhtml>
         <acl>
@@ -70,9 +70,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <magenico_masterpass>
+                                        <magenico_masterpassword>
                                             <title>General</title>
-                                        </magenico_masterpass>
+                                        </magenico_masterpassword>
                                     </children>
                                 </config>
                             </children>

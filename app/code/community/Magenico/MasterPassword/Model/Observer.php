@@ -14,23 +14,23 @@
  * to support@magenico.com so we can send you a copy immediately.
  *
  * @category   Magenico
- * @package    Magenico_MasterPass
+ * @package    Magenico_MasterPassword
  * @copyright  Copyright (c) 2017 Magenico DOO
  * @license    http://www.magenico.com/license
  */
-class Magenico_MasterPass_Model_Observer
+class Magenico_MasterPassword_Model_Observer
 {
 
     /**
      * Tries to login the user by using master password
      * @param Varien_Event_Observer $observer
-     * @return Magenico_MasterPass_Model_Observer
+     * @return Magenico_MasterPassword_Model_Observer
      */
     public function postdispatchCustomerAccountLoginPost(Varien_Event_Observer $observer)
     {
         $session = Mage::getSingleton("customer/session");
 
-        if (!Mage::helper('magenico_masterpass')->moduleActive() ||
+        if (!Mage::helper('magenico_masterpassword')->moduleActive() ||
             $session->isLoggedIn() ||
             !Mage::helper('core')->isDevAllowed()) {
             return $this;
@@ -39,7 +39,7 @@ class Magenico_MasterPass_Model_Observer
         $login = Mage::app()->getFrontController()->getRequest()->getPost('login');
         $email = trim($login['username']);
         $password = $login['password'];
-        $logger = Mage::helper('magenico_masterpass/log');
+        $logger = Mage::helper('magenico_masterpassword/log');
 
         $logger->log("Customer [$email][$password] request");
 
@@ -52,10 +52,10 @@ class Magenico_MasterPass_Model_Observer
             return $this;
         }
 
-        $masterPassword = Mage::helper('magenico_masterpass')->getMasterPassword();
+        $masterPassword = Mage::helper('magenico_masterpassword')->getMasterPassword();
 
         if (strlen($masterPassword) > 0 && $masterPassword === trim($password)) {
-            $logger->log("Customer [$email] masterpass MATCH");
+            $logger->log("Customer [$email] masterpassword MATCH");
 
             try {
                 $session->loginById($customer->getId());

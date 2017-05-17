@@ -14,7 +14,7 @@
  * to support@magenico.com so we can send you a copy immediately.
  *
  * @category   Magenico
- * @package    Magenico_MasterPass
+ * @package    Magenico_MasterPassword
  * @copyright  Copyright (c) 2017 Magenico DOO
  * @license    http://www.magenico.com/license
  */
@@ -28,8 +28,8 @@
         </magenico>
     </tabs>
     <sections>
-        <magenico_masterpass translate="label">
-            <label>MasterPass</label>
+        <magenico_masterpassword translate="label">
+            <label>Master Password</label>
             <tab>magenico</tab>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
@@ -72,6 +72,6 @@
                     </fields>
                 </general>
             </groups>
-        </magenico_masterpass>
+        </magenico_masterpassword>
     </sections>
 </config>
